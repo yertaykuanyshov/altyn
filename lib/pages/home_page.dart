@@ -14,8 +14,23 @@ class HomePage extends StatelessWidget {
         title: const Text("Amian"),
         actions: [
           IconButton(
-            icon: const Icon(Icons.sort),
-            onPressed: () {},
+            icon: const Icon(
+              FontAwesomeIcons.filter,
+              color: Colors.black45,
+            ),
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (_) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Text("OK"),
+                    ],
+                  );
+                },
+              );
+            },
           ),
         ],
       ),
