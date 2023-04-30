@@ -1,4 +1,5 @@
 import 'package:altyn/pages/add_transaction_page.dart';
+import 'package:altyn/widgets/transaction_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -9,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Altyn"),
+        title: const Text("Amian"),
         actions: [
           IconButton(
             icon: const Icon(Icons.sort),
@@ -17,20 +18,34 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemBuilder: (_, idx) {
-          return Card(
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text("Category name"),
-                  Text("Buy mac mini"),
-                ],
+      body: ListView.separated(
+        itemCount: 30,
+        separatorBuilder: (_, idx) {
+          if (idx % 5 == 0) {
+            return Container(
+              width: double.infinity,
+              height: 30,
+              color: Colors.black12,
+              child: const Center(
+                child: Text(
+                  "2023-08-14",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
               ),
-            ),
-          );
+            );
+          }
+
+          return const SizedBox.shrink();
+        },
+        itemBuilder: (_, idx) {
+          if (idx % 3 == 0) {
+            return const TransactionItem();
+          }
+
+          return const TransactionItem();
         },
       ),
       floatingActionButton: FloatingActionButton(
@@ -54,7 +69,7 @@ class HomePage extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.gear),
-            label: "Category",
+            label: "Setting",
           ),
         ],
       ),

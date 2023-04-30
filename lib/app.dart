@@ -2,8 +2,8 @@ import 'package:altyn/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AltynApp extends StatelessWidget {
-  const AltynApp({Key? key}) : super(key: key);
+class AmianApp extends StatelessWidget {
+  const AmianApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +12,7 @@ class AltynApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         textTheme: GoogleFonts.ubuntuTextTheme(),
+        colorScheme: const ColorScheme.light(primary: Colors.redAccent),
       ),
       home: const HomePage(),
     );
