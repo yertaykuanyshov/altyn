@@ -15,24 +15,36 @@ class AddTransactionPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const TextField(
+            TextField(
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: InputBorder.none,
                 hintText: "Summa",
+                filled: true,
+                fillColor: Colors.black12.withOpacity(0.03),
               ),
             ),
-            const SizedBox(height: 14),
-            const TextField(
+            const SizedBox(height: 8),
+            TextField(
               maxLines: 3,
               minLines: 2,
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "Description",
+                border: InputBorder.none,
+                filled: true,
+                fillColor: Colors.black12.withOpacity(0.03),
+                hintText: "Description (not required)",
               ),
             ),
-            const SizedBox(height: 14),
+            const SizedBox(height: 8),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (_) {
+                    return Container();
+                  },
+                );
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
@@ -41,11 +53,15 @@ class AddTransactionPage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 14),
-            CupertinoButton(
-              color: Colors.deepPurpleAccent,
+            MaterialButton(
               onPressed: () {},
-              child: const Text("Save"),
+              color: Colors.redAccent,
+              child: const Text(
+                "Add",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
           ],
         ),

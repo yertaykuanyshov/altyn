@@ -1,7 +1,13 @@
+import 'package:altyn/models/transaction.dart';
 import 'package:flutter/material.dart';
 
 class TransactionItem extends StatelessWidget {
-  const TransactionItem({Key? key}) : super(key: key);
+  const TransactionItem({
+    Key? key,
+    required this.transaction,
+  }) : super(key: key);
+
+  final Transaction transaction;
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +17,36 @@ class TransactionItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            children: const [
-              Text("Көңіл көтеру"),
-              Expanded(child: SizedBox()),
-              Text(
-                "-1\$",
+            children: [
+              const Text(
+                "Көңіл көтеру",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.redAccent,
                 ),
               ),
+              const Expanded(child: SizedBox()),
+              Builder(builder: (_) {
+                if (transaction.type == TransactionType.expense) {
+                  return Text(
+                    "+${transaction.sum}\$",
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green,
+                    ),
+                  );
+                }
+
+                return Text(
+                  "-${transaction.sum}\$",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.redAccent,
+                  ),
+                );
+              }),
             ],
           ),
           const Text("Кофе сатып алдым"),

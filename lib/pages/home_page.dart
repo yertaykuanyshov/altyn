@@ -1,3 +1,4 @@
+import 'package:altyn/models/transaction.dart';
 import 'package:altyn/pages/add_transaction_page.dart';
 import 'package:altyn/widgets/transaction_item.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
             return Container(
               width: double.infinity,
               height: 30,
-              color: Colors.black12,
+              color: Colors.black12.withOpacity(0.07),
               child: const Center(
                 child: Text(
                   "2023-08-14",
@@ -42,10 +43,24 @@ class HomePage extends StatelessWidget {
         },
         itemBuilder: (_, idx) {
           if (idx % 3 == 0) {
-            return const TransactionItem();
+            return TransactionItem(
+              transaction: Transaction(
+                id: "1",
+                sum: 2,
+                date: "2023-10-21",
+                type: TransactionType.income,
+              ),
+            );
           }
 
-          return const TransactionItem();
+          return TransactionItem(
+            transaction: Transaction(
+              id: "1",
+              sum: 6,
+              date: "2023-10-21",
+              type: TransactionType.expense,
+            ),
+          );
         },
       ),
       floatingActionButton: FloatingActionButton(
