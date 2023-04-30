@@ -14,6 +14,10 @@ class AmianApp extends StatelessWidget {
         textTheme: GoogleFonts.ubuntuTextTheme(),
         colorScheme: const ColorScheme.light(primary: Colors.redAccent),
         scaffoldBackgroundColor: Colors.white,
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+        )
       ),
       home: const HomePage(),
     );

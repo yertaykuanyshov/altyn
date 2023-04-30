@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Amian"),
         actions: [
           IconButton(
             icon: const Icon(
@@ -38,17 +37,12 @@ class HomePage extends StatelessWidget {
         itemCount: 30,
         separatorBuilder: (_, idx) {
           if (idx % 5 == 0) {
-            return Container(
-              width: double.infinity,
-              height: 30,
-              color: Colors.black12.withOpacity(0.07),
-              child: const Center(
-                child: Text(
-                  "2023-08-14",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
+            return const Center(
+              child: Text(
+                "2023-08-14",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
                 ),
               ),
             );
@@ -88,10 +82,15 @@ class HomePage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.house),
+            icon: Icon(FontAwesomeIcons.dollarSign),
             label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.sort),
+            label: "Category",
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.chartArea),
