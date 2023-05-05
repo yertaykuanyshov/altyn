@@ -17,7 +17,7 @@ class AmianApp extends StatelessWidget {
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           showSelectedLabels: false,
           showUnselectedLabels: false,
-        )
+        ),
       ),
       home: const HomePage(),
     );

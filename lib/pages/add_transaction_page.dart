@@ -1,3 +1,4 @@
+import 'package:altyn/widgets/choose_transaction_type.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +25,8 @@ class AddTransactionPage extends StatelessWidget {
                 fillColor: Colors.black12.withOpacity(0.03),
               ),
             ),
+            const SizedBox(height: 8),
+            const ChooseTransactionType(),
             const SizedBox(height: 8),
             TextField(
               maxLines: 3,
