@@ -12,14 +12,14 @@ class AmianApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         textTheme: GoogleFonts.ubuntuTextTheme(),
-        colorScheme: const ColorScheme.light(primary: Colors.redAccent),
+        colorScheme: const ColorScheme.light(primary: Colors.red),
         scaffoldBackgroundColor: Colors.white,
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           showSelectedLabels: false,
           showUnselectedLabels: false,
         ),
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }

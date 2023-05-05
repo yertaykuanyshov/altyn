@@ -56,11 +56,11 @@ class AddTransactionPage extends StatelessWidget {
                 ],
               ),
             ),
-            MaterialButton(
+            const SizedBox(height: 8),
+            FloatingActionButton(
               onPressed: () {},
-              color: Colors.redAccent,
               child: const Text(
-                "Add",
+                "Add expanse",
                 style: TextStyle(
                   color: Colors.white,
                 ),
