@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   final _hideController = ScrollController();
   bool _isVisible = true;
 
@@ -74,9 +73,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: AnimatedContainer(
-        height: _isVisible ? 60 : 0,
-        duration: const Duration(milliseconds: 100),
+      bottomNavigationBar: Visibility(
+        visible: _isVisible,
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           items: const [
