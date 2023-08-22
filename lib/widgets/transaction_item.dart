@@ -2,6 +2,7 @@ import 'package:altyn/models/transaction.dart';
 import 'package:flutter/material.dart';
 
 class TransactionItem extends StatelessWidget {
+
   const TransactionItem({
     Key? key,
     required this.transaction,
@@ -19,7 +20,7 @@ class TransactionItem extends StatelessWidget {
           Row(
             children: [
               const Text(
-                "Coffe",
+                "Coffee",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -49,7 +50,7 @@ class TransactionItem extends StatelessWidget {
               }),
             ],
           ),
-          const Text("Кофе сатып алдым"),
+          const Text("Description"),
         ],
       ),
     );

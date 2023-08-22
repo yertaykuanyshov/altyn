@@ -18,7 +18,7 @@ class _ChooseTransactionTypeState extends State<ChooseTransactionType> {
           color: Colors.redAccent,
           elevation: 0,
           child: const Text(
-            "Expence",
+            "Expense",
             style: TextStyle(
               color: Colors.white,
             ),

@@ -1,5 +1,4 @@
 import 'package:altyn/widgets/choose_transaction_type.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AddTransactionPage extends StatelessWidget {
