@@ -30,7 +30,7 @@ class TransactionItem extends StatelessWidget {
               Builder(builder: (_) {
                 if (transaction.type == TransactionType.expense) {
                   return Text(
-                    "+${transaction.sum}\$",
+                    "+${transaction.amount}\$",
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -40,7 +40,7 @@ class TransactionItem extends StatelessWidget {
                 }
 
                 return Text(
-                  "-${transaction.sum}\$",
+                  "-${transaction.amount}\$",
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

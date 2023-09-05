@@ -30,7 +30,7 @@ class TransactionList extends StatelessWidget {
           return TransactionItem(
             transaction: Transaction(
               id: "1",
-              sum: 2,
+              amount: 2,
               date: "2023-10-21",
               type: TransactionType.income,
             ),
@@ -40,7 +40,7 @@ class TransactionList extends StatelessWidget {
         return TransactionItem(
           transaction: Transaction(
             id: "1",
-            sum: 6,
+            amount: 6,
             date: "2023-10-21",
             type: TransactionType.expense,
           ),
